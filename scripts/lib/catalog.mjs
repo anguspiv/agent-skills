@@ -34,7 +34,6 @@ export function renderMarketplaceJson({ skills, repo }) {
     name: PLUGIN_NAME,
     description: 'Skills for AI coding agents by anguspiv',
     owner: OWNER,
-    metadata: { generated: GENERATED, homepage: `https://github.com/${repo}` },
     plugins: [
       {
         name: PLUGIN_NAME,
