@@ -7,15 +7,37 @@
     ".": {
       "package-name": "anguspiv-skills",
       "extra-files": [
-        { "type": "json", "path": ".claude-plugin/plugin.json", "jsonpath": "$.version" }
+        {
+          "type": "json",
+          "path": ".claude-plugin/plugin.json",
+          "jsonpath": "$.version"
+        }
       ]
     }
   },
   "changelog-sections": [
-    { "type": "feat", "section": "Skills" },
-    { "type": "fix", "section": "Fixes" },
-    { "type": "docs", "section": "Docs" },
-    { "type": "ci", "section": "Tooling", "hidden": true },
-    { "type": "chore", "section": "Tooling", "hidden": true }
-  ]
+    {
+      "type": "feat",
+      "section": "Skills"
+    },
+    {
+      "type": "fix",
+      "section": "Fixes"
+    },
+    {
+      "type": "docs",
+      "section": "Docs"
+    },
+    {
+      "type": "ci",
+      "section": "Tooling",
+      "hidden": true
+    },
+    {
+      "type": "chore",
+      "section": "Tooling",
+      "hidden": true
+    }
+  ],
+  "initial-version": "0.1.0"
 }
