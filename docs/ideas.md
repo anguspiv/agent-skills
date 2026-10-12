@@ -11,7 +11,7 @@ for the rest.
 Status key: `idea` → `drafted` (SKILL.md exists) → `tested` (baseline run
 without the skill, then with) → `released`.
 
-## anguspiv-voice — status: idea
+## angusp-voice — status: idea
 
 How I want agents to write, in chat replies and in documents. Seed material
 exists: `docs/voice.md` in recipe-box (stand alone, ask first, under 300
@@ -28,7 +28,7 @@ any PR description, issue body, or doc an agent produces for me.
 My issue shape: who needs this and why in one paragraph before any heading,
 numbered decisions each with a default, acceptance criteria, risk label, link
 to the plan section, under 300 words above the fold. Builds on
-`anguspiv-voice`. Prior art: the issue templates in recipe-box and the
+`angusp-voice`. Prior art: the issue templates in recipe-box and the
 `plan-to-issues.mjs` seeder format.
 
 Triggers: "open an issue", "file this", "write up a ticket", "seed issues from
@@ -92,7 +92,7 @@ material", "exercise for".
 My research shape: question first, sources with dates, claims separated from
 inference, a "what I did not check" line, output that fits above the fold
 with evidence in details blocks. Builds on Anthropic's `deep-research` with
-`anguspiv-voice` applied to the report.
+`angusp-voice` applied to the report.
 
 Triggers: "research", "compare options", "what's the state of", "find prior
 art", "survey the ecosystem".
@@ -102,7 +102,7 @@ art", "survey the ecosystem".
 READMEs, ADRs, specs, runbooks, API docs. Which doc type fits, the skeleton
 for each, what goes above the fold, when a diagram earns its place. The ADR
 rules from recipe-box (append-only, new ADR to supersede, only when there
-was a real alternative). Builds on `anguspiv-voice` and superpowers
+was a real alternative). Builds on `angusp-voice` and superpowers
 `doc-coauthoring`.
 
 Triggers: "write the README", "document this", "ADR for", "spec out", "write
@@ -114,14 +114,14 @@ A dated running log per project: what changed, what was decided and why,
 what is blocked, what to pick up next. Written at the end of a session or on
 request, in a fixed shape so a cold reader (or a fresh agent) can resume.
 Feeds `running-agent-teams` and the planning hub. Builds on
-`anguspiv-voice`.
+`angusp-voice`.
 
 Triggers: "diary entry", "log today", "what did we do", "write a handoff",
 end of a long session.
 
 ## Suggested order
 
-1. `anguspiv-voice` — everything else writes through it, and the seed doc exists.
+1. `angusp-voice` — everything else writes through it, and the seed doc exists.
 2. `writing-issues` — small, high use, tests the voice skill immediately.
 3. `typescript-standards` then `coding-standards` — the TS one is concrete; generalise after.
 4. `project-diary` — small, and it makes the rest of this work resumable.
