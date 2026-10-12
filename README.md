@@ -17,6 +17,7 @@ Browse the catalog at <https://anguspiv.github.io/agent-skills/>.
 ## Skills
 
 <!-- skills:start -->
+_No skills yet. See [docs/ideas.md](docs/ideas.md) for what is coming._
 <!-- skills:end -->
 
 ## How this repo works
