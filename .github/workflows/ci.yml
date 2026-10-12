@@ -1,0 +1,51 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+  pull-requests: read
+
+jobs:
+  check:
+    name: Validate skills and catalog
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # tags are needed for the stale-version check
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm test
+      - run: npm run validate
+      - run: npm run catalog:check
+      - name: claude plugin validate (marketplace)
+        run: npx -y @anthropic-ai/claude-code@latest plugin validate --strict .
+      - name: claude plugin validate (plugin manifest)
+        run: npx -y @anthropic-ai/claude-code@latest plugin validate --strict .claude-plugin/plugin.json
+      - name: Package release assets (smoke)
+        run: npm run package && ls -la dist
+
+  pr-title:
+    name: Conventional PR title
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: read
+    steps:
+      - uses: amannn/action-semantic-pull-request@v5
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          types: |
+            feat
+            fix
+            docs
+            chore
+            ci
+            refactor
+            test
