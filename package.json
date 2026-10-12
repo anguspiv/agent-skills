@@ -1,0 +1,22 @@
+{
+  "name": "@anguspiv/agent-skills",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Versioned agent skills for AI-assisted development, installable via the Claude Code plugin marketplace and skills.sh.",
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "test": "node --test scripts/lib",
+    "validate": "node scripts/validate.mjs",
+    "catalog": "node scripts/catalog.mjs",
+    "catalog:check": "node scripts/catalog.mjs --check",
+    "package": "node scripts/package.mjs",
+    "new": "node scripts/new.mjs",
+    "check": "npm test && npm run validate && npm run catalog:check"
+  },
+  "repository": "github:anguspiv/agent-skills",
+  "license": "MIT",
+  "author": "Angus Perkerson <angusp@angusp.com>"
+}
