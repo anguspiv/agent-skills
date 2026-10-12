@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Discuss a skill idea
+    url: https://github.com/anguspiv/agent-skills/discussions/categories/ideas
+    about: Half-formed ideas go to Discussions first. Issues are for concrete work.
+  - name: Ask a question
+    url: https://github.com/anguspiv/agent-skills/discussions/categories/q-a
+    about: How to install, how a skill is meant to be used, anything else.

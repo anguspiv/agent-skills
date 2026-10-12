@@ -1,0 +1,28 @@
+name: Skill request
+description: A concrete skill you want to exist.
+labels: [skill-request]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: The problem
+      description: What goes wrong today without the skill. One paragraph.
+    validations:
+      required: true
+  - type: textarea
+    id: triggers
+    attributes:
+      label: Trigger phrases
+      description: What a user would say that should load this skill.
+      placeholder: |
+        - "write a changelog for this release"
+        - "summarise what changed since v1.2"
+    validations:
+      required: true
+  - type: textarea
+    id: behaviour
+    attributes:
+      label: Expected behaviour
+      description: What the agent should do differently with the skill loaded.
+    validations:
+      required: true

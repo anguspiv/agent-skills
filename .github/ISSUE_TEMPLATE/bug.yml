@@ -1,0 +1,30 @@
+name: Bug in a skill
+description: A skill misbehaves, triggers wrongly, or fails to install.
+labels: [bug]
+body:
+  - type: input
+    id: skill
+    attributes:
+      label: Skill
+      placeholder: e.g. commit-messages
+    validations:
+      required: true
+  - type: dropdown
+    id: agent
+    attributes:
+      label: Agent
+      options: [Claude Code, Cursor, Codex, OpenCode, Other]
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Skill version
+      description: From metadata.version in SKILL.md, or the release you installed.
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened
+      description: What you asked, what the agent did, what you expected instead.
+    validations:
+      required: true

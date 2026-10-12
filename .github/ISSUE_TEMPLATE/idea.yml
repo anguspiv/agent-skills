@@ -1,0 +1,16 @@
+name: Skill idea
+description: A one-paragraph pitch to add to the ideas backlog.
+labels: [idea]
+body:
+  - type: textarea
+    id: pitch
+    attributes:
+      label: Pitch
+      description: What it does, who it is for, why existing skills do not cover it.
+    validations:
+      required: true
+  - type: input
+    id: prior
+    attributes:
+      label: Prior art
+      description: Links to similar skills, if any.
