@@ -11,7 +11,7 @@ for the rest.
 Status key: `idea` → `drafted` (SKILL.md exists) → `tested` (baseline run
 without the skill, then with) → `released`.
 
-## angusp-voice — status: idea · [#1](https://github.com/anguspiv/agent-skills/issues/1)
+## angusp-voice — status: tested · [#1](https://github.com/anguspiv/agent-skills/issues/1)
 
 How I want agents to write, in chat replies and in documents. Seed material
 exists: `docs/voice.md` in recipe-box (stand alone, ask first, under 300
