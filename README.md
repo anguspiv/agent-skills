@@ -17,7 +17,9 @@ Browse the catalog at <https://anguspiv.github.io/agent-skills/>.
 ## Skills
 
 <!-- skills:start -->
-_No skills yet. See [docs/ideas.md](docs/ideas.md) for what is coming._
+| Skill | Version | Use when |
+| --- | --- | --- |
+| [angusp-voice](skills/angusp-voice) | 0.1.0 | Use when writing anything on Angus's behalf that another person will read. Chat replies and status updates, pull request descriptions, issue bodies, review and proposal comments, READMEs and docs sections, handoffs. Trigger on "write this up", "draft a reply", "post a comment", "in my voice", "what's the status", or whenever the output is text a person will read rather than code. Also use before posting to GitHub from an agent crew. |
 <!-- skills:end -->
 
 ## How this repo works
