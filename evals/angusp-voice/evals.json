@@ -1,0 +1,54 @@
+{
+  "skill_name": "angusp-voice",
+  "evals": [
+    {
+      "id": 0,
+      "prompt": "Reply to the person who asked 'where are we?' given the context file.",
+      "expected_output": "A reply/document that follows the angusp voice rules in skills/angusp-voice/SKILL.md",
+      "files": [
+        "fixtures/status-context.md"
+      ],
+      "assertions": [
+        "First two lines state the outcome or the decision needed; they do not open with what was read ('I read', 'I reviewed', 'I looked at').",
+        "Contains exactly one numbered decision for the reader with a stated default and a one-sentence reason.",
+        "Total length is 150 words or fewer.",
+        "No inventory of sources read appears (no spec section numbers, ADR numbers, or file counts like '30 files').",
+        "Ends with the single next action the reader should take.",
+        "Mentions in one line the revert() id-preservation gap that was noticed and not touched."
+      ]
+    },
+    {
+      "id": 1,
+      "prompt": "Write the pull request description for the branch described in the diff summary.",
+      "expected_output": "A reply/document that follows the angusp voice rules in skills/angusp-voice/SKILL.md",
+      "files": [
+        "fixtures/diff-summary.md"
+      ],
+      "assertions": [
+        "Opens with one or two plain sentences saying what changed and why, before any heading.",
+        "Contains the line 'Closes #42'.",
+        "Has a section that puts the plan deviation (marker on the line instead of a lint) to the reader as a question with a default.",
+        "Has a 'Verified' section listing what was run, one line each.",
+        "Fewer than 300 words appear before the first <details> block (or in total if there is none).",
+        "No file paths appear above the first <details> block.",
+        "States that the CLI output of the marker is not done and belongs to Task 8."
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Write the README 'Versioning and releases' section from the facts given.",
+      "expected_output": "A reply/document that follows the angusp voice rules in skills/angusp-voice/SKILL.md",
+      "files": [
+        "fixtures/doc-context.md"
+      ],
+      "assertions": [
+        "Distinguishes the two version lines (per-skill metadata.version vs the plugin version) in separate sentences or bullets.",
+        "Contains the exact bump command `npm run catalog -- --bump <skill> <patch|minor|major>`.",
+        "States that the plugin version is owned by release-please and is not edited by hand.",
+        "Total length is 250 words or fewer.",
+        "Does not open with filler such as 'This section describes' or 'In this project'.",
+        "No emoji and no fully bolded sentences."
+      ]
+    }
+  ]
+}
