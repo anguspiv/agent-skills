@@ -66,7 +66,7 @@ test('index.html names each skill, both install commands, and escapes html', () 
   assert.match(html, /id="alpha"/);
   assert.match(html, /&lt;first&gt;/);
   assert.doesNotMatch(html, /<first>/);
-  assert.match(html, /v0\.1\.0/);
+  assert.doesNotMatch(html, /Plugin v|v0\.1\.0/, 'plugin version must not be embedded: release-please bumps it without regenerating');
 });
 
 test('bumpVersion handles patch, minor, major', () => {

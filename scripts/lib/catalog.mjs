@@ -61,7 +61,9 @@ export function replaceBetweenMarkers(text, start, end, inner) {
 
 const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
 
-export function renderIndexHtml({ version, skills, repo }) {
+// The plugin version is deliberately absent: release-please bumps it without
+// regenerating this file, and the drift check would fail on every release PR.
+export function renderIndexHtml({ skills, repo }) {
   const cards = skills.length
     ? skills
         .map(
@@ -102,7 +104,7 @@ export function renderIndexHtml({ version, skills, repo }) {
 <body>
   <main>
     <h1>agent-skills</h1>
-    <p>Skills for AI coding agents by <a href="${OWNER.url}">anguspiv</a>. Plugin v${esc(version)}.</p>
+    <p>Skills for AI coding agents by <a href="${OWNER.url}">anguspiv</a>.</p>
 
     <h2>Install everything</h2>
     <pre><code># Claude Code
