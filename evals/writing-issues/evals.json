@@ -1,0 +1,58 @@
+{
+  "skill_name": "writing-issues",
+  "evals": [
+    {
+      "id": 0,
+      "prompt": "Open the issue for plan task 7, following the project's issue conventions given in the context.",
+      "expected_output": "An issue title and body that follow skills/writing-issues/SKILL.md",
+      "files": [
+        "fixtures/plan-task.md"
+      ],
+      "assertions": [
+        "Title starts with 'Task 7:'.",
+        "Body opens with one prose paragraph (no heading first) saying who needs this, what changes for them, and why now, in 90 words or fewer.",
+        "Contains the headings '### Outcome', '### Acceptance criteria', '### Plan section', '### Risk', '### Constraints', '### Progress', in that order.",
+        "Every acceptance-criterion checkbox names its proof (a test file or command) after 'proof:'.",
+        "Contains the line 'Blocked by: #38' because Task 5 is open.",
+        "Plan section reads exactly 'docs/superpowers/plans/2026-09-01-slice-1-foundation.md \u2014 Task 7'.",
+        "No placeholders: no TBD, TODO, 'fill in', or angle-bracket slots.",
+        "Risk line is 'medium' followed by the reason in the reader's words (public type and totals every client renders)."
+      ]
+    },
+    {
+      "id": 1,
+      "prompt": "File the bug the owner described in chat, for a repo with no issue template.",
+      "expected_output": "An issue title and body that follow skills/writing-issues/SKILL.md",
+      "files": [
+        "fixtures/bug-report.md"
+      ],
+      "assertions": [
+        "Title line names the behaviour and the flag ('--since' re-uploads every note), not just 'bug'.",
+        "Body opens with one prose paragraph before any heading: who is affected and what happens (full re-upload of 1,400 notes).",
+        "States expected behaviour and actual behaviour as separate, labelled items.",
+        "Gives a reproduction: the exact command 'notewell sync --since yesterday' and the version 0.8.2.",
+        "Names the suspected cause as a hypothesis with its location (sync.ts line 88, Date compared to string).",
+        "Has at least one acceptance criterion whose proof is a test in src/sync.test.ts covering --since.",
+        "Contains no chat narrative ('ugh', 'heading out', 'the owner said', 'I'm filing this').",
+        "Total length is 250 words or fewer."
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Open an issue proposing the split into one plugin per skill, laying out the decisions for the owner.",
+      "expected_output": "An issue title and body that follow skills/writing-issues/SKILL.md",
+      "files": [
+        "fixtures/proposal.md"
+      ],
+      "assertions": [
+        "Body opens with one prose paragraph before any heading: what changes for users and why it is worth deciding now.",
+        "Has exactly three numbered decisions, one per open question (keep all-in-one, versioning, timing), each as a question followed by 'Default:' and a one-sentence reason.",
+        "States the risk level 'medium' with the reason in the reader's words (install id users typed, renames map).",
+        "Names the migration for existing installs (the renames map) as a thing the reader would want to know.",
+        "Pros and cons are not restated as a list above the fold; fewer than 300 words appear before the first <details> block or in total.",
+        "Last line tells the reader the one next action (reply with answers 1 to 3, or 'as proposed').",
+        "No placeholders: no TBD, TODO, or angle-bracket slots."
+      ]
+    }
+  ]
+}

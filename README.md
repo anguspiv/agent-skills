@@ -20,6 +20,7 @@ Browse the catalog at <https://anguspiv.github.io/agent-skills/>.
 | Skill | Version | Use when |
 | --- | --- | --- |
 | [angusp-voice](skills/angusp-voice) | 0.1.0 | Use when writing anything on Angus's behalf that another person will read. Chat replies and status updates, pull request descriptions, issue bodies, review and proposal comments, READMEs and docs sections, handoffs. Trigger on "write this up", "draft a reply", "post a comment", "in my voice", "what's the status", or whenever the output is text a person will read rather than code. Also use before posting to GitHub from an agent crew. |
+| [writing-issues](skills/writing-issues) | 0.1.0 | Use when opening or rewriting a GitHub issue on Angus's behalf. A task from a plan, a bug someone described in chat, a proposal that needs decisions, a follow-up noticed in passing. Trigger on "open an issue", "file this", "write up a ticket", "seed issues from the plan", "turn this into an issue", or whenever work needs to be handed to a person or agent who was not in the conversation. Pairs with angusp-voice for the sentences; this skill owns the shape of the issue. |
 <!-- skills:end -->
 
 ## How this repo works
