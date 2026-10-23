@@ -34,7 +34,7 @@
         "Names the suspected cause as a hypothesis with its location (sync.ts line 88, Date compared to string).",
         "Has at least one acceptance criterion whose proof is a test in src/sync.test.ts covering --since.",
         "Contains no chat narrative ('ugh', 'heading out', 'the owner said', 'I'm filing this').",
-        "Total length is 250 words or fewer."
+        "250 words or fewer appear above the first <details> block (or in total if there is none)."
       ]
     },
     {

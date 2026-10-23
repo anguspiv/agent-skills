@@ -62,6 +62,10 @@ chat. The chat's tone and asides never make it in; its facts all do.
   and passes after the fix, named by file. The second is the behaviour the
   user sees.
 - `Risk`: usually low; say who else the fix could affect.
+- Above the fold, in this order and nothing more: the paragraph, Expected
+  and Actual, Reproduction, two or three Acceptance criteria, Risk. Under
+  200 words. `Constraints` and `Links` appear only when they carry a fact
+  the fixer needs; "no template or spec covers this" is not one.
 - `<details><summary>Suspected cause</summary>`: the file and line, and the
   reasoning, labelled as a hypothesis. A proposed fix goes here too, in one
   or two lines, never as alternatives to choose between.
