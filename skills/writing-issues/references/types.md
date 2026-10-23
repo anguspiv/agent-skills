@@ -89,9 +89,14 @@ it is folded.
   `Default:` the answer you would give, then one reason. Nothing else: no
   option lists, no "my leaning" paragraph. If the reader answers "as
   proposed", the defaults are the plan.
+- No `Outcome` and no `Acceptance criteria`: nothing is decided yet, so
+  there is nothing to accept. The task issues that follow the decisions
+  carry those.
 - `Risk`: level and the reason in the reader's words.
 - One or two lines for what the reader would want to know that is not a
   decision: a migration, a thing that breaks, a cost.
+- Above the `<details>` block: the paragraph, the decisions, the risk, those
+  two lines. Under 200 words. Everything that explains the defaults is folded.
 - `<details><summary>Trade-offs</summary>`: the pros and cons, the current
   state, the proposed shape. Folded, because the decisions already carry
   their conclusions.
