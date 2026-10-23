@@ -23,7 +23,7 @@ so it goes first.
 Triggers: "write this up", "draft a reply", "post a comment", "in my voice",
 any PR description, issue body, or doc an agent produces for me.
 
-## writing-issues — status: idea · [#2](https://github.com/anguspiv/agent-skills/issues/2)
+## writing-issues — status: tested · [#2](https://github.com/anguspiv/agent-skills/issues/2)
 
 My issue shape: who needs this and why in one paragraph before any heading,
 numbered decisions each with a default, acceptance criteria, risk label, link
