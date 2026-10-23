@@ -36,7 +36,7 @@ why now. Not what you read, not the request that produced it.>
 ## Outcome
 <one sentence a person can check without reading code>
 
-## Acceptance criteria
+## Acceptance criteria             (work only; a proposal has none until decided)
 - [ ] <checkable statement> — proof: <test file, command, or thing to look at>
 
 ## Decisions                      (only when something is open)
@@ -61,7 +61,7 @@ Blocked by: #N                    (its own line, when something must land first)
 | part | limit |
 | --- | --- |
 | opening paragraph | 60 words |
-| above the first `<details>` | 250 words |
+| above the first `<details>` | 250 words; for a proposal, 200 |
 | acceptance criteria | 3 to 7, each with a proof |
 | decisions | one question each, each with a default |
 
