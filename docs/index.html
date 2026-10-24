@@ -42,6 +42,11 @@ npx skills add anguspiv/agent-skills</code></pre>
         <p>Use when writing anything on Angus&#39;s behalf that another person will read. Chat replies and status updates, pull request descriptions, issue bodies, review and proposal comments, READMEs and docs sections, handoffs. Trigger on &quot;write this up&quot;, &quot;draft a reply&quot;, &quot;post a comment&quot;, &quot;in my voice&quot;, &quot;what&#39;s the status&quot;, or whenever the output is text a person will read rather than code. Also use before posting to GitHub from an agent crew.</p>
         <pre><code>npx skills add anguspiv/agent-skills@angusp-voice</code></pre>
       </article>
+      <article class="card" id="typescript-standards">
+        <h3><a href="https://github.com/anguspiv/agent-skills/tree/main/skills/typescript-standards">typescript-standards</a> <span class="v">v0.1.0</span></h3>
+        <p>Use when writing, reviewing, or setting up TypeScript or JavaScript in one of Angus&#39;s repositories. Any .ts, .tsx, .js or .mjs change, &quot;add a package&quot;, &quot;set up tsconfig&quot;, &quot;why is eslint complaining&quot;, &quot;review this PR&quot;, a new function in a pnpm workspace, a Zod schema, a Vitest test. Also use when a project pulls in @angusp/eslint-config, @angusp/tsconfig, @angusp/prettier-config or @angusp/vitest-config, since this skill says how they are wired and what they assume.</p>
+        <pre><code>npx skills add anguspiv/agent-skills@typescript-standards</code></pre>
+      </article>
       <article class="card" id="writing-issues">
         <h3><a href="https://github.com/anguspiv/agent-skills/tree/main/skills/writing-issues">writing-issues</a> <span class="v">v0.1.0</span></h3>
         <p>Use when opening or rewriting a GitHub issue on Angus&#39;s behalf. A task from a plan, a bug someone described in chat, a proposal that needs decisions, a follow-up noticed in passing. Trigger on &quot;open an issue&quot;, &quot;file this&quot;, &quot;write up a ticket&quot;, &quot;seed issues from the plan&quot;, &quot;turn this into an issue&quot;, or whenever work needs to be handed to a person or agent who was not in the conversation. Pairs with angusp-voice for the sentences; this skill owns the shape of the issue.</p>
