@@ -1,6 +1,6 @@
 {
   "name": "@anguspiv/agent-skills",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "private": true,
   "description": "Versioned agent skills for AI-assisted development, installable via the Claude Code plugin marketplace and skills.sh.",
   "type": "module",
