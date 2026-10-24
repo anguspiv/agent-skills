@@ -3,7 +3,7 @@
   "name": "anguspiv-skills",
   "displayName": "anguspiv skills",
   "version": "0.0.0",
-  "description": "Skills for AI coding agents by anguspiv: angusp-voice, writing-issues.",
+  "description": "Skills for AI coding agents by anguspiv: angusp-voice, typescript-standards, writing-issues.",
   "author": {
     "name": "Angus Perkerson",
     "email": "angusp@angusp.com",
@@ -17,6 +17,7 @@
     "claude-code",
     "skills",
     "angusp-voice",
+    "typescript-standards",
     "writing-issues"
   ],
   "metadata": {

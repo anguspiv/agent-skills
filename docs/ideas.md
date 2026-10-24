@@ -44,7 +44,7 @@ superpowers `codebase-design` and `testing-best-practices`.
 Triggers: "review this", "clean this up", "is this idiomatic", any
 implementation task where the project has no CLAUDE.md of its own.
 
-## typescript-standards — status: idea · [#3](https://github.com/anguspiv/agent-skills/issues/3)
+## typescript-standards — status: tested · [#3](https://github.com/anguspiv/agent-skills/issues/3)
 
 The JS/TS layer under `coding-standards`: strict TS, ESM, pnpm workspaces,
 Vitest with fast-check for pure packages, shared `@angusp/*` configs, Zod at

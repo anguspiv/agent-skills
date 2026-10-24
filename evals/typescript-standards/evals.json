@@ -1,0 +1,64 @@
+{
+  "skill_name": "typescript-standards",
+  "evals": [
+    {
+      "id": 0,
+      "prompt": "Add parseQuantity to the published @kitchen/units package: source, tests, exports, changeset.",
+      "expected_output": "Files or a review that follow skills/typescript-standards/SKILL.md",
+      "files": [
+        "fixtures/implement.md"
+      ],
+      "assertions": [
+        "src/parse-quantity.ts exists and exports parseQuantity and QuantitySchema as named exports; no `export default` in any new source file.",
+        "Every relative import in the new or changed TypeScript files ends in .js (NodeNext resolution).",
+        "Type-only imports use `import type` or an inline `type` modifier (verbatimModuleSyntax).",
+        "No `any`, no non-null assertion `!`, no `as unknown as`, and no `enum` in the new source.",
+        "QuantitySchema is a Zod object schema, the Quantity type is derived with z.infer, and parseQuantity validates its result with the schema before returning it.",
+        "src/parse-quantity.test.ts exists, uses Vitest, includes a fast-check property, and covers the null cases (1/0, negative, unknown unit).",
+        "src/index.ts re-exports parseQuantity, QuantitySchema, and the Quantity type.",
+        "A changeset exists under .changeset/ naming @kitchen/units as a minor bump with a conventional-commit description (feat: \u2026)."
+      ]
+    },
+    {
+      "id": 1,
+      "prompt": "Review the @kitchen/pantry PR diff against the repo's TypeScript standards and post the review.",
+      "expected_output": "Files or a review that follow skills/typescript-standards/SKILL.md",
+      "files": [
+        "fixtures/review.md",
+        "fixtures/review-diff/pantry.diff"
+      ],
+      "assertions": [
+        "First line is a verdict of the form 'N findings, M must fix.' or 'No findings.'",
+        "Flags the default export of loadInventory and asks for a named export.",
+        "Flags `JSON.parse(raw) as Stock` as an unvalidated boundary and asks for a Zod schema parse.",
+        "Flags `threshold: any`.",
+        "Flags the relative imports without .js extensions (./types, ./inventory) under NodeNext.",
+        "Flags `import { Item, Stock }` as a type-only import that needs `import type` under verbatimModuleSyntax.",
+        "Flags the enum (prefer a string union) and the non-null assertion on stock.items[i].",
+        "Flags console.log in a library and the file read inside the library function (separate reading from parsing).",
+        "Flags the test that mocks node:fs (it tests the mock) and the missing changeset for a published package.",
+        "Each finding names file and line; fewer than 300 words appear above the first <details>; no praise filler.",
+        "Flags `unit?: string` in types.ts: data fields are `T | null`, not optional, under exactOptionalPropertyTypes."
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Scaffold a new published package @kitchen/report in the pnpm + turbo workspace so lint, typecheck, test, and build pass.",
+      "expected_output": "Files or a review that follow skills/typescript-standards/SKILL.md",
+      "files": [
+        "fixtures/scaffold.md"
+      ],
+      "assertions": [
+        "package.json: name @kitchen/report, \"type\": \"module\", exports map with types and default under dist, files [dist], license MIT, publishConfig.access public.",
+        "package.json scripts match the repo convention: build `tsc -p tsconfig.build.json`, typecheck `tsc --noEmit`, test `vitest run`, lint `eslint .`.",
+        "devDependencies include @angusp/eslint-config, @angusp/tsconfig, @angusp/vitest-config, eslint, typescript, vitest; @angusp/prettier-config is not added at package level.",
+        "tsconfig.json extends @angusp/tsconfig/node with outDir dist, rootDir src, include [src]; tsconfig.build.json extends it and excludes tests.",
+        "eslint.config.js spreads @angusp/eslint-config/typescript and ignores dist/.",
+        "vitest.config.ts calls createBaseConfig from @angusp/vitest-config with include src/**/*.test.ts.",
+        "src/index.ts has a named export and no default export; a test file exists that imports from vitest and uses a .js relative import.",
+        "A changeset exists for @kitchen/report with a conventional-commit description.",
+        "No stray tooling: no .eslintrc*, jest.config*, babel.config*, or tsconfig path aliases."
+      ]
+    }
+  ]
+}
