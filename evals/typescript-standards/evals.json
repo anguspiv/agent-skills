@@ -49,7 +49,7 @@
         "fixtures/scaffold.md"
       ],
       "assertions": [
-        "package.json: name @kitchen/report, \"type\": \"module\", exports map with types and default under dist, files [dist], license MIT, publishConfig.access public.",
+        "package.json: name @kitchen/report, \"type\": \"module\", exports map with types and default under dist, files [dist], a license taken from the repo (MIT here, per the fixture), publishConfig.access public, and private true until first release.",
         "package.json scripts match the repo convention: build `tsc -p tsconfig.build.json`, typecheck `tsc --noEmit`, test `vitest run`, lint `eslint .`.",
         "devDependencies include @angusp/eslint-config, @angusp/tsconfig, @angusp/vitest-config, eslint, typescript, vitest; @angusp/prettier-config is not added at package level.",
         "tsconfig.json extends @angusp/tsconfig/node with outDir dist, rootDir src, include [src]; tsconfig.build.json extends it and excludes tests.",

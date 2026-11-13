@@ -1,8 +1,9 @@
 # Adding a package to a pnpm + turbo workspace
 
-Seven files. Copy them, change the name and the description, run `pnpm
+Eight files. Copy them, change the name and the description, run `pnpm
 install`, then `pnpm turbo lint typecheck test build --filter=<name>`. The
-example package is `@scope/dates`; replace it throughout.
+example package is `@scope/dates`; replace it throughout. First check that
+`pnpm-workspace.yaml` has a glob covering the new path.
 
 ## package.json
 
@@ -12,7 +13,7 @@ example package is `@scope/dates`; replace it throughout.
   "version": "0.0.0",
   "private": true,
   "description": "What it does, one line",
-  "license": "MIT",
+  "license": "<from the repo's LICENSING.md; MIT if it has none>",
   "type": "module",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -45,8 +46,12 @@ example package is `@scope/dates`; replace it throughout.
 
 `private: true` until the first real release; drop it with the changeset
 that ships the first version. Prettier is not a package dependency; the
-root carries `@angusp/prettier-config`. Zod goes in `dependencies` when the
-package has a boundary.
+root carries the one Prettier config, as a `prettier.config.js` that
+re-exports `@angusp/prettier-config` or an older local config. Zod goes in
+`dependencies` when the package has a boundary. `fast-check` goes in
+`devDependencies` only when the package has pure functions to property-test;
+`@types/node` whenever it imports `node:*`, because `@angusp/tsconfig/node`
+sets `lib` but not `types`.
 
 ## tsconfig.json and tsconfig.build.json
 
@@ -75,8 +80,10 @@ export default [...typescript, { ignores: ['dist/'] }]
 ```
 
 `/node` instead of `/typescript` for a CLI or a scripts folder: it adds
-`eslint-plugin-n`. Each package has its own config; ESLint stops at the
-nearest one.
+`eslint-plugin-n`, which reads the supported Node range from `engines`; a
+repo without `engines` sets `settings: { node: { version: '>=<.nvmrc>' } }`.
+A CLI also sets `'no-console': 'off'`. Each package has its own config;
+ESLint stops at the nearest one.
 
 ## vitest.config.ts
 
@@ -86,30 +93,31 @@ import { createBaseConfig } from '@angusp/vitest-config'
 export default createBaseConfig({ test: { include: ['src/**/*.test.ts'] } })
 ```
 
-The package exports factories (`createBaseConfig`, `createReactConfig`,
-`createVueConfig`) that merge your overrides into the shared config. There
-is no default export to spread.
+The package exports factories that merge your overrides into the shared
+config: `createBaseConfig` from the root, `createReactConfig` from
+`@angusp/vitest-config/react`, `createVueConfig` from
+`@angusp/vitest-config/vue`. There is no default export to spread.
 
 ## src/index.ts and src/index.test.ts
 
 ```ts
-export { formatRange } from './format-range.js'
-export { DateRangeSchema, type DateRange } from './date-range.js'
+export const PACKAGE_NAME = '@scope/dates'
 ```
 
 ```ts
 import { describe, expect, it } from 'vitest'
-import { formatRange } from './index.js'
+import { PACKAGE_NAME } from './index.js'
 
-describe('formatRange', () => {
-  it('prints a same-day range as one date', () => {
-    expect(formatRange({ from: '2026-10-01', to: '2026-10-01' })).toBe('1 Oct 2026')
+describe('@scope/dates', () => {
+  it('exports its name', () => {
+    expect(PACKAGE_NAME).toBe('@scope/dates')
   })
 })
 ```
 
-The barrel re-exports by name. A placeholder package exports one named
-constant and tests it, so the four scripts pass on day one.
+A placeholder package exports one named constant and tests it, so the four
+scripts pass on day one. Once real modules exist, `index.ts` becomes a barrel
+that re-exports them by name: `export { formatRange } from './format-range.js'`.
 
 ## .changeset/<words>.md
 
@@ -122,11 +130,12 @@ feat(dates): add the package with formatRange
 ```
 
 Required for a published package, including the one that creates it. The
-body is a conventional commit; the changeset lint rejects a sentence.
+first line is a conventional commit; paragraphs may follow it.
 
 ## Workspace wiring that already exists
 
-`pnpm-workspace.yaml` lists `packages/*`, so nothing is registered. Turbo's
+When `pnpm-workspace.yaml` already lists a glob that covers the new path
+(`packages/*` here), nothing is registered. Turbo's
 `build`, `lint`, `typecheck` and `test` tasks run the package's scripts with
 `dependsOn: ["^build"]`, so a package that depends on a sibling uses
 `"@scope/other": "workspace:*"` and builds after it.

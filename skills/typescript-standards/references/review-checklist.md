@@ -1,9 +1,13 @@
 # Reviewing a TypeScript diff
 
 The review follows angusp-voice: verdict first, one line per finding with
-file and line, evidence folded. Findings split into must fix (does not
-typecheck, does not lint, breaks a consumer, or violates an invariant) and
-should fix (the standards below). Everything else is a nit under `<details>`
+file and line, evidence folded. A finding's `file:line` is its address, not
+evidence, so it stays in the line; the folded part holds the reasoning and
+suggested code. Findings split into must fix (fails `tsc`, fails `eslint`
+as an error, breaks a consumer, violates an invariant the project names, or
+is one of the three the lint only warns about but the standards treat as
+errors: `any`, `!`, `console` in a library) and should fix (the rest of the
+standards). Everything else is a nit under `<details>`
 or left out.
 
 ## Verdict line
@@ -13,13 +17,14 @@ or left out.
 ## Must fix
 
 - A relative import without `.js` under NodeNext: resolves in Vitest, fails
-  in the emitted ESM.
+  `tsc` (TS2835) and the emitted ESM.
 - A type-only import without `type`: `verbatimModuleSyntax` error.
 - `export default` from a module that `index.ts` re-exports with
   `export *`: the default is silently dropped.
 - `as X` on data from a file, request, env, CLI, or `JSON.parse`: unvalidated
   boundary. Ask for a Zod schema and `Schema.parse`, with the type derived
-  by `z.infer`.
+  by `z.infer`. An internal structural cast with a one-line reason is not
+  this finding.
 - `any` in a signature. `unknown` plus a parse, or the real type.
 - `xs[i]!` or any `!` on an index: `for of`, `.at()`, or a narrow.
 - `console.*` in a library.
@@ -31,7 +36,7 @@ or left out.
 ## Should fix
 
 - `enum`: string union, or `as const` object when runtime values are needed.
-- `field?: T` on a data type: `field: T | null` under `exactOptionalPropertyTypes`; optional is for options objects.
+- `field?: T` on a data type, or `.optional()` on a data schema: `field: T | null` and `.nullable()`; optional is for options objects. Convention, not compiler.
 - Interfaces duplicating a Zod schema: derive the type from the schema.
 - Index loops and `forEach` with mutation where `filter`, `map`, `reduce` say the same thing.
 - Hard-coded thresholds in two places that must agree.
