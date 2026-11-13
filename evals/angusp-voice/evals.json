@@ -12,7 +12,7 @@
         "First two lines state the outcome or the decision needed; they do not open with what was read ('I read', 'I reviewed', 'I looked at').",
         "Contains exactly one numbered decision for the reader with a stated default and a one-sentence reason.",
         "Total length is 150 words or fewer.",
-        "No inventory of sources read appears (no spec section numbers, ADR numbers, or file counts like '30 files').",
+        "No inventory of sources read appears (no list of ADRs read, no file counts like '30 files'); a single section-number pointer in parentheses is allowed.",
         "Ends with the single next action the reader should take.",
         "Mentions in one line the revert() id-preservation gap that was noticed and not touched."
       ]

@@ -10,7 +10,7 @@
       ],
       "assertions": [
         "Title starts with 'Task 7:'.",
-        "Body opens with one prose paragraph (no heading first) saying who needs this, what changes for them, and why now, in 90 words or fewer.",
+        "Body opens with one prose paragraph (no heading first) saying who needs this, what changes for them, and why now, in 60 words or fewer.",
         "Contains the headings '### Outcome', '### Acceptance criteria', '### Plan section', '### Risk', '### Constraints', '### Progress', in that order.",
         "Every acceptance-criterion checkbox names its proof (a test file or command) after 'proof:'.",
         "Contains the line 'Blocked by: #38' because Task 5 is open.",
@@ -32,9 +32,9 @@
         "States expected behaviour and actual behaviour as separate, labelled items.",
         "Gives a reproduction: the exact command 'notewell sync --since yesterday' and the version 0.8.2.",
         "Names the suspected cause as a hypothesis with its location (sync.ts line 88, Date compared to string).",
-        "Has at least one acceptance criterion whose proof is a test in src/sync.test.ts covering --since.",
+        "Has two or three acceptance criteria, the first naming the test file src/sync.test.ts as proof.",
         "Contains no chat narrative ('ugh', 'heading out', 'the owner said', 'I'm filing this').",
-        "250 words or fewer appear above the first <details> block (or in total if there is none)."
+        "200 words or fewer appear outside <details> blocks."
       ]
     },
     {
@@ -49,7 +49,7 @@
         "Has exactly three numbered decisions, one per open question (keep all-in-one, versioning, timing), each as a question followed by 'Default:' and a one-sentence reason.",
         "States the risk level 'medium' with the reason in the reader's words (install id users typed, renames map).",
         "Names the migration for existing installs (the renames map) as a thing the reader would want to know.",
-        "Pros and cons are not restated as a list above the fold; fewer than 300 words appear before the first <details> block or in total.",
+        "Pros and cons are not restated as a list outside <details>; 200 words or fewer appear outside <details> blocks.",
         "Last line tells the reader the one next action (reply with answers 1 to 3, or 'as proposed').",
         "No placeholders: no TBD, TODO, or angle-bracket slots."
       ]
