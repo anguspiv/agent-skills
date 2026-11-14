@@ -34,15 +34,21 @@ to the plan section, under 300 words above the fold. Builds on
 Triggers: "open an issue", "file this", "write up a ticket", "seed issues from
 the plan".
 
-## coding-standards — status: idea · [#4](https://github.com/anguspiv/agent-skills/issues/4)
+## coding-standards — status: dropped · [#4](https://github.com/anguspiv/agent-skills/issues/4)
 
-Language-agnostic defaults: small pure units, explicit boundaries, tests that
-describe behaviour, conventional commits, no dead code, no speculative
-abstraction. The checklist a reviewer runs, not a style guide. Builds on
-superpowers `codebase-design` and `testing-best-practices`.
-
-Triggers: "review this", "clean this up", "is this idiomatic", any
-implementation task where the project has no CLAUDE.md of its own.
+Not built. Before writing it, five baseline scenarios were run with fresh
+agents and no skill: implement a small Python module from a spec, review a
+diff with nine planted smells, clean up a tangled function without changing
+its output, a 23:40 hotfix with "no time for tests", and a request to add
+speculative flags, hooks, and a class "for later". The agents passed every
+assertion: tests first, characterisation tests before refactoring, pure
+units split from I/O, conventional commits, no dead code, pushed back on the
+speculation with reasons, and added regression tests under pressure. A skill
+that restates what the agent already does costs context on every load and
+changes nothing, so this stays unbuilt. The language-specific opinions that
+did move behaviour live in `typescript-standards`; general method lives in
+the superpowers skills (`test-driven-development`, `codebase-design`).
+Reopen if a baseline failure turns up in real use.
 
 ## typescript-standards — status: idea · [#3](https://github.com/anguspiv/agent-skills/issues/3)
 
