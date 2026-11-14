@@ -50,7 +50,7 @@ did move behaviour live in `typescript-standards`; general method lives in
 the superpowers skills (`test-driven-development`, `codebase-design`).
 Reopen if a baseline failure turns up in real use.
 
-## typescript-standards — status: idea · [#3](https://github.com/anguspiv/agent-skills/issues/3)
+## typescript-standards — status: tested · [#3](https://github.com/anguspiv/agent-skills/issues/3)
 
 The JS/TS layer under `coding-standards`: strict TS, ESM, pnpm workspaces,
 Vitest with fast-check for pure packages, shared `@angusp/*` configs, Zod at

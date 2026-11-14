@@ -10,12 +10,13 @@
     {
       "name": "anguspiv-skills",
       "source": "./",
-      "description": "Skills for AI coding agents by anguspiv: angusp-voice, writing-issues.",
+      "description": "Skills for AI coding agents by anguspiv: angusp-voice, typescript-standards, writing-issues.",
       "category": "development",
       "keywords": [
         "agent-skills",
         "skills",
         "angusp-voice",
+        "typescript-standards",
         "writing-issues"
       ]
     }
