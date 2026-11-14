@@ -37,7 +37,7 @@
         "Flags the enum (prefer a string union) and the non-null assertion on stock.items[i].",
         "Flags console.log in a library and the file read inside the library function (separate reading from parsing).",
         "Flags the test that mocks node:fs (it tests the mock) and the missing changeset for a published package.",
-        "Each finding names file and line; fewer than 300 words appear above the first <details>; no praise filler.",
+        "Each finding that points at code names file and line (a missing changeset has no location and needs none); fewer than 300 words appear above the first <details>; no praise filler.",
         "Flags `unit?: string` in types.ts: data fields are `T | null`, not optional, under exactOptionalPropertyTypes."
       ]
     },
