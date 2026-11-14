@@ -1,9 +1,10 @@
 # Documents and GitHub posts
 
 Anything posted to GitHub or written into a repository is read later, by
-someone with no context, often on a phone. Under 300 words before the first
-`<details>` block. The ask first. Evidence folded. Headings only after the
-reader knows what the document is.
+someone with no context, often on a phone. A GitHub post is under 300 words
+outside `<details>` blocks, wherever they fall; README and doc sections have
+their own budget below; an issue body follows writing-issues. The ask first.
+Evidence folded. Headings only after the reader knows what the document is.
 
 ## Pull request description
 
@@ -19,15 +20,17 @@ Closes #N
 
 ## Verified
 
-<what was run and what it showed, one line each>
+<one plain sentence per check, naming it and its result; the commands go below>
 
 <details><summary>Files and details</summary>
-<the file list, the not-done list with its task number, anything else>
+<the commands run, the file list, the not-done list with its task number,
+anything else>
 </details>
 ```
 
-The first two sentences are prose, not a heading and not `Closes`. The file
-list never appears above `<details>`.
+The first two sentences are prose, not a heading and not `Closes`, unless
+the project defines a first-line marker for PR bodies, which then goes
+first. The file list never appears outside `<details>`.
 
 Example opening, for a branch that added JSON output to a CLI:
 
@@ -103,4 +106,5 @@ during the review. Fix: pass the commit you read, and refuse if it moved."
 Some projects parse strings in posts: a first-line heading, `Closes #N`,
 `Blocked by: #N`, a trailing HTML comment. When the project's instructions
 name such markers, keep them exactly and in position. Everything around a
-marker may change; the marker may not.
+marker may change; the marker may not. A trailing marker stays the very last
+line: the reader's next action goes above it, never after it.

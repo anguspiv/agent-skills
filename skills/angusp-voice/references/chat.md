@@ -29,10 +29,12 @@ command, hit one judgement call, and noticed an unrelated gap:
 > Noticed, not touched: `report --until` accepts a date in the future without
 > a warning.
 >
-> Reply 1 (exit 2 with formats) or 2 (exit 1 as planned) and I push and open
-> the PR.
+> Reply yes (exit 2 with formats) or no (exit 1 as planned) and I push and
+> open the PR.
 
-Under eighty words. The reader can answer with one character.
+Under ninety words. The reader can answer with one word. With one decision
+the answer is yes or no; with several, in a post, numbers refer to the
+decisions: "answers to 1 and 2".
 
 ## Answering a question
 
@@ -48,8 +50,8 @@ get one line each only if the reader would otherwise ask about them.
 
 ## Handoff at the end of a session
 
-Four lines, fixed headings, in this order: `Done:`, `Decided:`, `Blocked:`,
-`Next:`. Each is one or two lines. A cold reader or a fresh agent can resume
+Four labelled lines, fixed labels, in this order: `Done:`, `Decided:`,
+`Blocked:`, `Next:`. Each label's text is at most two lines. A cold reader or a fresh agent can resume
 from this alone. Anything longer belongs in the project diary, not the
 handoff.
 
