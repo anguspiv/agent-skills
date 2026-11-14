@@ -1,5 +1,22 @@
 # Changelog
 
+## [0.2.0](https://github.com/anguspiv/agent-skills/compare/v0.1.0...v0.2.0) (2026-11-14)
+
+
+### Skills
+
+* **typescript-standards:** add the TS standards skill with package setup and review references ([#16](https://github.com/anguspiv/agent-skills/issues/16)) ([e990af8](https://github.com/anguspiv/agent-skills/commit/e990af86a7502e459be39599a2d0f604d79d1af4))
+
+
+### Fixes
+
+* **angusp-voice,writing-issues:** resolve adversarial-review findings; commit eval fixtures ([#18](https://github.com/anguspiv/agent-skills/issues/18)) ([b8075da](https://github.com/anguspiv/agent-skills/commit/b8075dac7c533653579e32813edad789ae960efc))
+
+
+### Docs
+
+* **ideas:** drop coding-standards; five baselines pass without it ([#17](https://github.com/anguspiv/agent-skills/issues/17)) ([fee3af4](https://github.com/anguspiv/agent-skills/commit/fee3af419eb9a840aa7e3e86ce323085051aaf2f))
+
 ## 0.1.0 (2026-10-24)
 
 
