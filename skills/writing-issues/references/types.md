@@ -15,7 +15,8 @@ the criteria, and the pointers, so an implementer opens the plan for the how.
 - `Outcome`: one sentence a person can check without reading code.
 - `Acceptance criteria`: one checkbox per `Expected:` line in the plan's
   steps, plus one for the tests the plan names, each with `proof:`.
-- `Plan section`: `<plan file> — Task N`, on its own line, exactly.
+- `Plan section`: a heading of that name, then `<plan file> — Task N` on its own
+  line, exactly. Scripts look for the heading.
 - `Risk`: the plan's risk level, then the reason in the reader's words.
 - `Constraints`: only what a cold reader would get wrong. Project invariants
   are already in the project's instructions; cite one only if this task
@@ -43,8 +44,8 @@ Example opening and criteria, for a task that adds a `--json` flag:
 > ### Acceptance criteria
 >
 > - [ ] `--json` prints valid JSON with no table output — proof: `packages/cli/src/show.test.ts`
-> - [ ] Exit code and errors are unchanged with the flag — proof: same file
-> - [ ] Ids are preserved in the output — proof: id-preservation case in the same file
+> - [ ] Exit code and errors are unchanged with the flag — proof: `packages/cli/src/show.test.ts`
+> - [ ] Ids are preserved in the output — proof: id-preservation case in `packages/cli/src/show.test.ts`
 
 ## Bug from a chat message
 
@@ -59,13 +60,14 @@ chat. The chat's tone and asides never make it in; its facts all do.
   says what is expected, cite the section; if the spec is silent, say so.
 - `Reproduction`: the exact command, then what you see.
 - `Acceptance criteria`: the first one is always the test that fails today
-  and passes after the fix, named by file. The second is the behaviour the
-  user sees.
+  and passes after the fix, naming the file it lives in or will be added to.
+  The second is the behaviour the user sees.
 - `Risk`: usually low; say who else the fix could affect.
 - Above the fold, in this order and nothing more: the paragraph, Expected
   and Actual, Reproduction, two or three Acceptance criteria, Risk. Under
-  200 words. `Constraints` and `Links` appear only when they carry a fact
-  the fixer needs; "no template or spec covers this" is not one.
+  200 words outside `<details>`. `Outcome`, `Constraints` and `Links` appear
+  only when they carry a fact the fixer needs; "no template or spec covers
+  this" is not one.
 - `<details><summary>Suspected cause</summary>`: the file and line, and the
   reasoning, labelled as a hypothesis. A proposed fix goes here too, in one
   or two lines, never as alternatives to choose between.
@@ -99,13 +101,14 @@ it is folded.
 - `Risk`: level and the reason in the reader's words.
 - One or two lines for what the reader would want to know that is not a
   decision: a migration, a thing that breaks, a cost.
-- Above the `<details>` block: the paragraph, the decisions, the risk, those
-  two lines. Under 200 words. Everything that explains the defaults is folded.
+- Outside `<details>`: the paragraph, the decisions, the risk, those two
+  lines. Under 200 words. Everything that explains the defaults is folded.
 - `<details><summary>Trade-offs</summary>`: the pros and cons, the current
   state, the proposed shape. Folded, because the decisions already carry
   their conclusions.
-- Last line: the reader's next action. "Reply with answers to 1 to 3, or
-  'as proposed'."
+- Last line: the reader's next action, numbered by decision: "Reply with
+  answers to 1 to 3, or 'as proposed'." A trailing marker the project
+  parses stays below it, as the very last line.
 
 Example decisions block, for moving docs:
 

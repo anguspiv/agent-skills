@@ -3,7 +3,7 @@ name: angusp-voice
 description: Use when writing anything on Angus's behalf that another person will read. Chat replies and status updates, pull request descriptions, issue bodies, review and proposal comments, READMEs and docs sections, handoffs. Trigger on "write this up", "draft a reply", "post a comment", "in my voice", "what's the status", or whenever the output is text a person will read rather than code. Also use before posting to GitHub from an agent crew.
 license: MIT
 metadata:
-  version: "0.1.0"
+  version: "0.1.1"
   author: anguspiv
 ---
 
@@ -28,6 +28,8 @@ out; the order never changes.
    the reader must decide. Not what you read, not what you were asked.
 2. **Decisions.** Numbered. Each one is a question, then `Default:` the
    answer you would give, then one sentence why. One question per decision.
+   In a GitHub post, list every open decision. In a chat reply, one at a
+   time: the one that blocks you now; the rest wait for the next reply.
    If there is nothing to decide, say so in the first line instead.
 3. **What the reader would want to know.** Two or three lines at most:
    a risk, a deviation, a thing you noticed and did not touch.
@@ -35,16 +37,21 @@ out; the order never changes.
    reader's time. "Reply 1 or 2." "Merge when green." "Nothing needed."
 5. **Evidence**, folded. In a chat reply, leave it out; in a document or
    GitHub post, put it under `<details><summary>…</summary>` blocks with a
-   plain-sentence summary. File paths, test names, commands, section numbers
-   live here and nowhere above.
+   plain-sentence summary. File paths, test names, command text, and
+   inventories of what you read live here and nowhere above. A PR's Verified
+   section is the one exception: it names each check and its result in a
+   plain sentence ("Unit tests pass, 25 of 25"), and the command itself still
+   goes in the block. A section-number pointer in parentheses may follow the
+   one sentence that uses it.
 
 ## Budgets
 
 | surface | above the fold |
 | --- | --- |
 | chat reply | 150 words, no headings, at most three bullets |
-| GitHub comment, PR body, issue body | 300 words before the first `<details>` |
-| README or doc section | 250 words per section, one heading level, no sub-sections under 100 words |
+| GitHub comment or PR body | 300 words outside `<details>` blocks, wherever they fall |
+| issue body | see writing-issues, which owns the issue budgets |
+| README or doc section | 250 words per section, one heading level, plus a sub-heading only for a sub-part over 100 words |
 
 ## Sentences
 
@@ -68,8 +75,8 @@ information; drop the rest.
 | drift | fix |
 | --- | --- |
 | Opening with what you read or did ("I read the spec, four ADRs and 30 files") | Open with the outcome. Sources appear only where a fact from them is used. |
-| Three options and "tell me which" | One question, one default, one reason. A second question is a second number. |
-| `Closes #N` or a heading as the first line of a PR | Two plain sentences first. Headings come after the reader knows what this is. |
+| Three options and "tell me which" | One question, one default, one reason. In a post, a second question is a second number; in chat, it waits for the next reply. |
+| `Closes #N` or a heading as the first line of a PR | Two plain sentences first, unless the project defines a first-line marker. Headings come after the reader knows what this is. |
 | File list above the fold | Say "four files in core"; the list goes in `<details>`. |
 | Ending on an offer ("happy to do X if you want") | End on the reader's next action. |
 | A sentence in bold | Bold the first words of a bullet, or nothing. |
