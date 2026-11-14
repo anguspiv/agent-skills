@@ -44,8 +44,8 @@ Example opening and criteria, for a task that adds a `--json` flag:
 > ### Acceptance criteria
 >
 > - [ ] `--json` prints valid JSON with no table output — proof: `packages/cli/src/show.test.ts`
-> - [ ] Exit code and errors are unchanged with the flag — proof: same file
-> - [ ] Ids are preserved in the output — proof: id-preservation case in the same file
+> - [ ] Exit code and errors are unchanged with the flag — proof: `packages/cli/src/show.test.ts`
+> - [ ] Ids are preserved in the output — proof: id-preservation case in `packages/cli/src/show.test.ts`
 
 ## Bug from a chat message
 

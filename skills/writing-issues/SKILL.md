@@ -39,7 +39,7 @@ why now. Not what you read, not the request that produced it.>
 <one sentence a person can check without reading code>
 
 ## Acceptance criteria            (work only; 2 to 7, a bug usually 2 or 3)
-- [ ] <checkable statement> — proof: <the test file it lives in or will be added to, a command, or a thing to look at>
+- [ ] <checkable statement> — proof: <the test file it lives in or will be added to, or the command to run; a path or a command written out, never a directory or "those">
 
 ## Decisions                      (only when something is open)
 1. <question>? Default: <answer>, because <one reason>.
@@ -61,7 +61,7 @@ Blocked by: #N                    (its own line, when something must land first)
 
 <details><summary>…</summary> everything else: trade-offs, evidence, the suspected cause </details>
 
-<for an issue that asks for a decision: the reader's next action, one line>
+<for an issue that asks for a decision: the reader's next action, one line, with the accept-the-defaults shortcut: or "as proposed">
 <a trailing marker the project parses, when there is one, stays the very last line>
 ```
 
@@ -72,7 +72,8 @@ criterion to the scripts that read issues.
 
 ## Budgets
 
-Words are counted outside `<details>` blocks, wherever they fall.
+Words are counted outside `<details>` blocks, wherever they fall. A limit is
+a ceiling, not a target: land under it with room, and at the line, cut.
 
 | part | limit |
 | --- | --- |
@@ -105,6 +106,8 @@ A list of what you read. A proposed implementation outside `<details>`; it
 goes under `<details>` as a hypothesis, labelled as one. A spec or plan
 citation in the opening paragraph; a pointer in parentheses may follow the
 sentence that uses it, and the file goes under Plan section or Links.
+Angle-bracket slots of any kind, including command syntax: write the value
+that was run (`--since yesterday`), not `--since <date>`.
 
 ## Quick reference
 
