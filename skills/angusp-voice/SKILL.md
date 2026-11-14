@@ -37,9 +37,12 @@ out; the order never changes.
    reader's time. "Reply 1 or 2." "Merge when green." "Nothing needed."
 5. **Evidence**, folded. In a chat reply, leave it out; in a document or
    GitHub post, put it under `<details><summary>…</summary>` blocks with a
-   plain-sentence summary. File paths, test names, commands, and inventories
-   of what you read live here and nowhere above. A section-number pointer in
-   parentheses may follow the one sentence that uses it.
+   plain-sentence summary. File paths, test names, command text, and
+   inventories of what you read live here and nowhere above. A PR's Verified
+   section is the one exception: it names each check and its result in a
+   plain sentence ("Unit tests pass, 25 of 25"), and the command itself still
+   goes in the block. A section-number pointer in parentheses may follow the
+   one sentence that uses it.
 
 ## Budgets
 

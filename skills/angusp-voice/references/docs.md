@@ -20,10 +20,11 @@ Closes #N
 
 ## Verified
 
-<what was run and what it showed, one line each>
+<one plain sentence per check, naming it and its result; the commands go below>
 
 <details><summary>Files and details</summary>
-<the file list, the not-done list with its task number, anything else>
+<the commands run, the file list, the not-done list with its task number,
+anything else>
 </details>
 ```
 
